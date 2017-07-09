@@ -6,24 +6,22 @@ This playbook was tested on Ubuntu 16.04 x86_64.
 
 # Finished
 
-* Create VPC related stuff with AWS CloudFormation [template](https://s3.amazonaws.com/quickstart-reference/aws/vpc/latest/templates/aws-vpc.template) by ansible
+* 1. Create VPC related stuff with AWS CloudFormation [template](https://s3.amazonaws.com/quickstart-reference/aws/vpc/latest/templates/aws-vpc.template) by ansible
 
-Launch Cassandra cluster within a VPC to offer enhanced networking feature for higher performance (more packets per second), lower latency
+- Launch Cassandra cluster within a VPC to offer enhanced networking feature for higher performance (more packets per second), lower latency
 
-Ansible role for VPC
-- roles/vpc/tasks/main.yml
+- Ansible role for VPC: roles/vpc/tasks/main.yml
 
-* Create 3 nodes EC2: 1 node per different AZ
+* 2. Create 3 nodes EC2: 1 node per different AZ
 
-Set up a cluster in Availability Zones us-wast-2a, us-wast-2b, and us-wast-2c and set a replication factor of 3 at the keyspace level, then each write operation will be replicated across nodes in these three Availability Zones.
+- Set up a cluster in Availability Zones us-wast-2a, us-wast-2b, and us-wast-2c and set a replication factor of 3 at the keyspace level, then each write operation will be replicated across nodes in these three Availability Zones.
 
-Ansible role for EC2
-- roles/ec2instance/tasks/main.yml
+- Ansible role for EC2: roles/ec2instance/tasks/main.yml
 
 ## TODO
 
 * Support deploy Cassandra Cluster into AWS
-  - Currently only deploy cluster locally using Ansible with Vagrant & Virtualbox, please find in [GitHub ansible-cassandra-vagrant](https://github.com/davidlu1001/ansible-cassandra-vagrant)
+  - Currently only deploy locally using Ansible with Vagrant & Virtualbox, please find in GitHub: [ansible-cassandra-vagrant](https://github.com/davidlu1001/ansible-cassandra-vagrant)
 * Support deploy Cassandra Cluster in Private Subnet with Bastion in Public Subnet
 * Parameterize more cassandra.yaml options
 * Allow user to specify JDK & JRE version (1.7 and 1.8) and Cassandra version (2.0 and 3.0)
