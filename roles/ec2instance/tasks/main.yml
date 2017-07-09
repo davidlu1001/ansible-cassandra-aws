@@ -43,9 +43,6 @@
     #  with_indexed_items: "{{ ec2_subnet_id }}"
   register: ec2
 
-  #- set_fact:
-  #  instances_ids: "{{ ec2.instance_ids }}"
-
 - name: Add the newly created EC2 instance(s) to the local host group (located at ./inventory/hosts)
   lineinfile:
     dest: "./inventory/hosts"
