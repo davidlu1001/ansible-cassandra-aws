@@ -1,0 +1,7 @@
+---
+
+- name: create cassandra nodes
+  hosts: 
+    - cassandra
+  roles:
+    - cassandra_common

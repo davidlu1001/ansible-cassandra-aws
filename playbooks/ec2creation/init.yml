@@ -1,0 +1,7 @@
+- hosts: localhost
+  user: ubuntu
+  connection: local
+  gather_facts: false
+  roles:
+    - vpc
+    - ec2instance

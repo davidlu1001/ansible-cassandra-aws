@@ -1,0 +1,24 @@
+---
+# Variables that can provide as extra vars
+vpc_name: Cassandra-VPC2
+vpc_region: us-west-2 # Oregon
+ec2_instance_type: t2.micro
+ec2_key_name: "qdp-poc"
+ec2_security_group_name: "default"
+#ec2_subnet_ids: ['subnet-c39281a4','subnet-3e4e7b77','subnet-a39027f8']
+subnets:
+  - { zone: "us-wast-2a", vpc_pvt_subnet: "subnet-c39281a4"}
+  - { zone: "us-wast-2b", vpc_pvt_subnet: "subnet-3e4e7b77"}
+  - { zone: "us-wast-2c", vpc_pvt_subnet: "subnet-a39027f8"}
+ec2_count: 3
+ec2_volume_size: 10
+ami_name: "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"
+ami_owner: "099720109477"
+
+# Tags
+ENVIRONMENT: test
+SERVER_ROLE: test
+
+ec2_tag_Name: "cassandra"
+ec2_tag_Type: "cassandra"
+ec2_tag_Environment: "test"

@@ -1,0 +1,32 @@
+---
+- name: CloudFormation Stack for creating VPC
+  cloudformation:
+    stack_name: "Cassandra-VPC"
+    region: "us-west-2"
+    state: "present"
+    template_url: "https://s3.amazonaws.com/quickstart-reference/aws/vpc/latest/templates/aws-vpc.template"
+  args:
+    template_parameters:
+      AvailabilityZones: "us-west-2a,us-west-2b,us-west-2c"
+      NumberOfAZs: '3'
+      VPCCIDR: 10.0.0.0/16
+      CreatePrivateSubnets: 'false'
+      PrivateSubnet1ACIDR: 10.0.0.0/19
+      PrivateSubnet2ACIDR: 10.0.32.0/19
+      PrivateSubnet3ACIDR: 10.0.64.0/19
+      PrivateSubnet4ACIDR: 10.0.96.0/19
+      PublicSubnet1CIDR: 10.0.128.0/20
+      PublicSubnet2CIDR: 10.0.144.0/20
+      PublicSubnet3CIDR: 10.0.160.0/20
+      PublicSubnet4CIDR: 10.0.176.0/20
+      CreateAdditionalPrivateSubnets: 'false'
+      PrivateSubnet1BCIDR: 10.0.192.0/21
+      PrivateSubnet2BCIDR: 10.0.200.0/21
+      PrivateSubnet3BCIDR: 10.0.208.0/21
+      PrivateSubnet4BCIDR: 10.0.216.0/21
+      KeyPairName: "qdp-poc"
+      NATInstanceType: "t2.small"
+    tags:
+      env: poc
+      service: cassandra
+  register: cassandra_stack
