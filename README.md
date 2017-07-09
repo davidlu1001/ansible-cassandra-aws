@@ -30,10 +30,8 @@ This playbook was tested on Ubuntu 16.04 x86_64.
 * Parameterize more cassandra.yaml options
 * Allow user to specify JDK & JRE version (1.7 and 1.8) and Cassandra version (2.0 and 3.0)
 * Support building custom AMIs (contains the stable JDK, required agents, Cassandra software packages and so on) can be used as a golden image
-* Backup & Recovery
-Consider using the Netflix-built and open-sourced tool [Priam](https://github.com/Netflix/Priam) for Cassandra backup and recovery.
-* Auto Scaling group
-Set up an Auto Scaling group with minimum, maximum, and desired size set to the same size. Doing this will allow Auto Scaling to bring up a new node in the place of a failed node when a node fails with bootstrap
+* Backup & Recovery: consider using the Netflix-built and open-sourced tool [Priam](https://github.com/Netflix/Priam) for Cassandra backup and recovery.
+* Auto Scaling group: set up an Auto Scaling group with minimum, maximum, and desired size set to the same size. Doing this will allow Auto Scaling to bring up a new node in the place of a failed node when a node fails with bootstrap
 
 ## Requirements
 
