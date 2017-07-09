@@ -26,6 +26,7 @@ This playbook was tested on Ubuntu 16.04 x86_64.
 
 * Support deploy Cassandra Cluster into AWS
 * Support deploy Cassandra Cluster in Private Subnet with Bastion in Public Subnet
+* Support [Dynamic EC2 Inventory Management](https://aws.amazon.com/cn/blogs/apn/getting-started-with-ansible-and-dynamic-amazon-ec2-inventory-management/)
 * Parameterize more cassandra.yaml options
 * Allow user to specify JDK & JRE version (1.7 and 1.8) and Cassandra version (2.0 and 3.0)
 
